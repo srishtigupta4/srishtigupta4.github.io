@@ -35,7 +35,7 @@ body {
   margin: 0;
   background: var(--cream);
   color: var(--ink);
-  font-family: "Newsreader", Georgia, "Times New Roman", serif;
+  font-family: "Lato", Arial, Helvetica, sans-serif;
   font-size: 18px;
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
@@ -60,13 +60,13 @@ a:focus-visible, button:focus-visible {
 .skip-link:focus { left: 1rem; top: 1rem; }
 
 h1, h2, h3, h4 {
-  font-family: "Newsreader", Georgia, serif;
+  font-family: "Raleway", Arial, Helvetica, sans-serif;
   font-weight: 600;
   color: var(--black);
   line-height: 1.2;
 }
 
-h1 { font-size: clamp(2rem, 5vw, 2.7rem); font-weight: 500; font-style: italic; }
+h1 { font-size: clamp(2rem, 5vw, 2.7rem); font-weight: 600; }
 h2 { font-size: 1.5rem; margin-top: 3rem; font-weight: 600; }
 h3 { font-size: 1.2rem; margin-bottom: 0.3rem; font-weight: 600; }
 
@@ -85,8 +85,7 @@ header.site-header { padding: 2.4rem 0 1.6rem; }
   gap: 0.6rem 1.4rem;
 }
 .site-title {
-  font-family: "Newsreader", serif;
-  font-style: italic;
+  font-family: "Raleway", Arial, Helvetica, sans-serif;
   font-weight: 500;
   font-size: 1.5rem;
   text-decoration: none;
@@ -118,7 +117,6 @@ nav.site-nav a[aria-current="page"] {
 /* ---------- Hero ---------- */
 .hero { padding: 1.6rem 0 1rem; }
 .hero .kicker {
-  font-style: italic;
   font-size: 1rem;
   color: var(--ink);
   margin-bottom: 0.4rem;
@@ -140,7 +138,6 @@ nav.site-nav a[aria-current="page"] {
 /* ---------- Placeholder callouts ---------- */
 .placeholder-text {
   color: var(--ink);
-  font-style: italic;
   opacity: 0.85;
 }
 .placeholder-img {
@@ -155,7 +152,6 @@ figure.ph {
 figure.ph figcaption {
   font-size: 0.85rem;
   color: var(--ink);
-  font-style: italic;
   margin-top: 0.4rem;
   opacity: 0.8;
 }
@@ -192,7 +188,6 @@ main { padding-bottom: 3rem; }
 .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0 0.4rem; }
 .tag {
   font-size: 0.82rem;
-  font-style: italic;
   color: var(--ink);
   background: var(--cream-raised);
   border: 1px solid var(--tan);
@@ -203,11 +198,11 @@ main { padding-bottom: 3rem; }
 .project { padding: 1.6rem 0; border-bottom: 1px solid var(--tan); }
 .project:last-child { border-bottom: none; }
 .project h3 { margin-bottom: 0.35rem; }
-.project .meta { font-size: 0.9rem; color: var(--ink); margin-bottom: 0.5rem; font-style: italic; }
+.project .meta { font-size: 0.9rem; color: var(--ink); margin-bottom: 0.5rem; }
 
 .paper-links { list-style: none; padding: 0; margin: 0.7rem 0 0; font-size: 0.92rem; }
 .paper-links li { padding: 0.35rem 0; color: var(--ink); }
-.paper-links .venue { color: var(--ink); opacity: 0.75; font-style: italic; }
+.paper-links .venue { color: var(--ink); opacity: 0.75; }
 
 .callout {
   background: var(--cream-raised);
@@ -240,7 +235,7 @@ main { padding-bottom: 3rem; }
   border-bottom: 1px solid var(--tan);
 }
 .timeline-item:last-child { border-bottom: none; }
-.timeline-item .when { font-size: 0.88rem; color: var(--ink); font-style: italic; }
+.timeline-item .when { font-size: 0.88rem; color: var(--ink); }
 @media (max-width: 540px) { .timeline-item { grid-template-columns: 1fr; } }
 
 /* ---------- Footer ---------- */
