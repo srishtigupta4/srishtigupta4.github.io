@@ -1,0 +1,289 @@
+/* ---------------------------------------------------------
+   Srishti Gupta — personal site
+   Styled after the "Kigen" WordPress.com theme:
+   cream background, black/charcoal ink, Newsreader serif,
+   a narrow reading column, and a six-color striped rule
+   as the signature footer flourish.
+--------------------------------------------------------- */
+
+:root {
+  --cream: #fffbee;
+  --cream-raised: #f5efdd;
+  --ink: #454545;
+  --black: #000000;
+  --tan: #d5d0c8;
+  --focus: #a33a8f;
+  --content-width: 700px;
+  --wide-width: 1000px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --cream: #1c1a15;
+    --cream-raised: #26221b;
+    --ink: #d9d3c4;
+    --black: #fdf8ec;
+    --tan: #47412f;
+    --focus: #e08fce;
+  }
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: "Newsreader", Georgia, "Times New Roman", serif;
+  font-size: 18px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--black); text-decoration-underline; text-decoration-thickness: 0.5px; text-underline-offset: 2px; }
+a:hover { color: var(--focus); }
+a:focus-visible, button:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--black);
+  color: var(--cream);
+  padding: 0.6rem 1rem;
+  z-index: 100;
+}
+.skip-link:focus { left: 1rem; top: 1rem; }
+
+h1, h2, h3, h4 {
+  font-family: "Newsreader", Georgia, serif;
+  font-weight: 600;
+  color: var(--black);
+  line-height: 1.2;
+}
+
+h1 { font-size: clamp(2rem, 5vw, 2.7rem); font-weight: 500; font-style: italic; }
+h2 { font-size: 1.5rem; margin-top: 3rem; font-weight: 600; }
+h3 { font-size: 1.2rem; margin-bottom: 0.3rem; font-weight: 600; }
+
+p { margin: 0 0 1.1rem; }
+
+.wrap { max-width: var(--content-width); margin: 0 auto; padding: 0 1.4rem; }
+.wrap-wide { max-width: var(--wide-width); margin: 0 auto; padding: 0 1.4rem; }
+
+/* ---------- Header ---------- */
+header.site-header { padding: 2.4rem 0 1.6rem; }
+.site-header .wrap-wide {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.4rem;
+}
+.site-title {
+  font-family: "Newsreader", serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: var(--black);
+}
+.site-title:hover { color: var(--focus); }
+
+nav.site-nav { font-size: 0.95rem; }
+nav.site-nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.3rem;
+  margin: 0;
+  padding: 0;
+}
+nav.site-nav a {
+  text-decoration: none;
+  color: var(--ink);
+}
+nav.site-nav a:hover,
+nav.site-nav a[aria-current="page"] {
+  color: var(--black);
+  text-decoration: underline;
+  text-decoration-thickness: 0.5px;
+  text-underline-offset: 3px;
+}
+
+/* ---------- Hero ---------- */
+.hero { padding: 1.6rem 0 1rem; }
+.hero .kicker {
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--ink);
+  margin-bottom: 0.4rem;
+}
+.hero-body { display: flex; gap: 2rem; align-items: center; flex-wrap: wrap-reverse; }
+.hero-text { flex: 1 1 380px; }
+.hero-photo {
+  flex: 0 0 auto;
+  width: 148px; height: 148px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid var(--cream-raised);
+  box-shadow: 0 0 0 1px var(--tan);
+  background: var(--cream-raised);
+}
+.hero-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.lede { font-size: 1.15rem; color: var(--ink); }
+
+/* ---------- Placeholder callouts ---------- */
+.placeholder-text {
+  color: var(--ink);
+  font-style: italic;
+  opacity: 0.85;
+}
+.placeholder-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+figure.ph {
+  margin: 1.6rem 0;
+}
+figure.ph figcaption {
+  font-size: 0.85rem;
+  color: var(--ink);
+  font-style: italic;
+  margin-top: 0.4rem;
+  opacity: 0.8;
+}
+
+/* ---------- Image gallery (home page, Kigen signature) ---------- */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.6rem;
+  margin: 2rem 0;
+}
+.gallery img { width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 3px; }
+@media (max-width: 640px) {
+  .gallery { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ---------- Two-column "get in touch / bio" block ---------- */
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 2.5rem;
+  margin: 2.4rem 0;
+}
+@media (max-width: 640px) {
+  .split { grid-template-columns: 1fr; }
+}
+.split .label { font-size: 0.95rem; margin-bottom: 0.6rem; }
+.split nav ul { list-style: none; margin: 0; padding: 0; }
+.split nav li { margin-bottom: 0.3rem; }
+
+/* ---------- Sections / cards ---------- */
+main { padding-bottom: 3rem; }
+
+.tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0 0.4rem; }
+.tag {
+  font-size: 0.82rem;
+  font-style: italic;
+  color: var(--ink);
+  background: var(--cream-raised);
+  border: 1px solid var(--tan);
+  padding: 0.2rem 0.7rem;
+  border-radius: 999px;
+}
+
+.project { padding: 1.6rem 0; border-bottom: 1px solid var(--tan); }
+.project:last-child { border-bottom: none; }
+.project h3 { margin-bottom: 0.35rem; }
+.project .meta { font-size: 0.9rem; color: var(--ink); margin-bottom: 0.5rem; font-style: italic; }
+
+.paper-links { list-style: none; padding: 0; margin: 0.7rem 0 0; font-size: 0.92rem; }
+.paper-links li { padding: 0.35rem 0; color: var(--ink); }
+.paper-links .venue { color: var(--ink); opacity: 0.75; font-style: italic; }
+
+.callout {
+  background: var(--cream-raised);
+  border: 1px solid var(--tan);
+  padding: 1.1rem 1.3rem;
+  border-radius: 4px;
+  margin: 1.6rem 0;
+}
+
+.btn {
+  display: inline-block;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  color: var(--cream);
+  background: var(--black);
+  padding: 0.6rem 1.3rem;
+  border-radius: 3px;
+  border: 1px solid var(--black);
+}
+.btn:hover { background: var(--focus); border-color: var(--focus); color: var(--cream); }
+.btn.secondary { background: transparent; color: var(--black); border: 1px solid var(--black); }
+.btn.secondary:hover { color: var(--cream); background: var(--black); }
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 0.4rem 1.2rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--tan);
+}
+.timeline-item:last-child { border-bottom: none; }
+.timeline-item .when { font-size: 0.88rem; color: var(--ink); font-style: italic; }
+@media (max-width: 540px) { .timeline-item { grid-template-columns: 1fr; } }
+
+/* ---------- Footer ---------- */
+footer.site-footer { padding: 2.4rem 0 0; }
+footer.site-footer .wrap-wide {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.4rem;
+  padding: 1.6rem 0;
+}
+footer.site-footer nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.1rem;
+  margin: 0; padding: 0;
+  font-size: 0.85rem;
+}
+footer.site-footer nav a { color: var(--ink); text-decoration: none; }
+footer.site-footer nav a:hover { color: var(--black); text-decoration: underline; }
+footer.site-footer .credit { font-size: 0.82rem; color: var(--ink); }
+
+.stripe {
+  display: flex;
+  width: 100%;
+  height: 12px;
+}
+.stripe span { flex: 1 1 0; height: 100%; }
+.stripe span:nth-child(1) { background: #fb977a; }
+.stripe span:nth-child(2) { background: #a33a8f; }
+.stripe span:nth-child(3) { background: #f4b924; }
+.stripe span:nth-child(4) { background: #c3336e; }
+.stripe span:nth-child(5) { background: #e8613a; }
+.stripe span:nth-child(6) { background: #38ada6; }
+
+.scaffold-note {
+  background: var(--cream-raised);
+  border: 1px dashed var(--tan);
+  padding: 0.9rem 1.1rem;
+  border-radius: 4px;
+  font-size: 0.92rem;
+  color: var(--ink);
+  margin-bottom: 2rem;
+}
