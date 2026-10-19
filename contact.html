@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact — Srishti Gupta</title>
-<meta name="description" content="How to get in touch with Srishti Gupta.">
+<title>Contact | Srishti Gupta</title>
+<meta name="description" content="How to contact Srishti Gupta.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Raleway:wght@500;600;700&display=swap" rel="stylesheet">
@@ -13,33 +13,27 @@
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 
-<header class="site-header">
-  <div class="wrap-wide">
-    <a class="site-title" href="index.html">Srishti Gupta</a>
-    <nav class="site-nav" aria-label="Primary">
-      <ul>
-        <li><a href="index.html" >Home</a></li>
-        <li><a href="research.html" >Research</a></li>
-        <li><a href="teaching.html" >Teaching</a></li>
-        <li><a href="cv.html" >CV</a></li>
-        <li><a href="personal.html" >Personal</a></li>
-        <li><a href="contact.html" aria-current="page">Contact</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+<div class="topbar">
+  <button class="menu-btn" id="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="sidebar">&#9776;</button>
+  <a class="topbar-name" href="index.html">Srishti Gupta</a>
+</div>
 
-<main id="main">
-  <div class="wrap">
+<nav class="sidebar" id="sidebar" aria-label="Primary">
+  <a class="sidebar-name" href="index.html">Srishti Gupta</a>
+  <a href="index.html" class="nav-item">Home</a><a href="research.html" class="nav-item">Research</a><a href="teaching.html" class="nav-item">Teaching</a><a href="cv.html" class="nav-item">CV</a><a href="personal.html" class="nav-item">Personal</a><a href="contact.html" class="nav-item active" aria-current="page">Contact</a>
+  <div class="sidebar-stripe" aria-hidden="true"><span style="background:#fb977a"></span><span style="background:#a33a8f"></span><span style="background:#f4b924"></span><span style="background:#c3336e"></span><span style="background:#e8613a"></span><span style="background:#38ada6"></span></div>
+</nav>
+<div class="overlay" id="overlay"></div>
 
-<section class="hero">
-  <p class="kicker">Contact</p>
-  <h1 style="font-style:normal;">Say hello</h1>
-  <p class="lede">Email is the best way to reach me. I am always glad to hear from people interested in community-centered AI.</p>
-</section>
+<main id="main" class="main">
+<div class="title-block">
+  <h1>Contact</h1>
+  <hr class="title-bar">
+</div>
+<div class="content">
+<p>Email is the best way to reach me. I am always glad to hear from people interested in community-centered AI.</p>
 
-<section>
-  <p><a class="btn" href="mailto:sgupta4@albany.edu">sgupta4@albany.edu</a></p>
+<p><a class="btn" href="mailto:sgupta4@albany.edu">sgupta4@albany.edu</a></p>
 
   <h2>If you're a search committee or hiring manager</h2>
   <p>Thank you for your interest. Please include the position title and any materials you need from me. My CV is on this site, and I am happy to share my research and teaching statements and the contact information for my references.</p>
@@ -55,27 +49,16 @@
     <a href="https://scholar.google.com/citations?user=Wp0aUIYAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
     &middot; <a href="https://www.linkedin.com/in/srishtiguptahci/" target="_blank" rel="noopener">LinkedIn</a>
   </p>
-</section>
-
-  </div>
+</div>
 </main>
 
-<footer class="site-footer">
-  <div class="wrap-wide">
-    <nav aria-label="Footer">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="research.html">Research</a></li>
-        <li><a href="teaching.html">Teaching</a></li>
-        <li><a href="cv.html">CV</a></li>
-        <li><a href="personal.html">Personal</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-    <p class="credit">Srishti Gupta, Ph.D. &middot; <a href="mailto:sgupta4@albany.edu">sgupta4@albany.edu</a></p>
-  </div>
-  <div class="stripe" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
-</footer>
-
+<script>
+(function(){
+  var b=document.getElementById('menu-btn'),s=document.getElementById('sidebar'),o=document.getElementById('overlay');
+  function set(open){s.classList.toggle('open',open);o.classList.toggle('show',open);b.setAttribute('aria-expanded',open?'true':'false');}
+  b.addEventListener('click',function(){set(!s.classList.contains('open'));});
+  o.addEventListener('click',function(){set(false);});
+})();
+</script>
 </body>
 </html>

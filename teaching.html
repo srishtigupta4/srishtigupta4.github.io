@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Teaching — Srishti Gupta</title>
-<meta name="description" content="Teaching philosophy and courses in AI, data analytics, AI ethics, and human-centered design.">
+<title>Teaching | Srishti Gupta</title>
+<meta name="description" content="Teaching at the University at Albany, SUNY.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Raleway:wght@500;600;700&display=swap" rel="stylesheet">
@@ -13,33 +13,27 @@
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 
-<header class="site-header">
-  <div class="wrap-wide">
-    <a class="site-title" href="index.html">Srishti Gupta</a>
-    <nav class="site-nav" aria-label="Primary">
-      <ul>
-        <li><a href="index.html" >Home</a></li>
-        <li><a href="research.html" >Research</a></li>
-        <li><a href="teaching.html" aria-current="page">Teaching</a></li>
-        <li><a href="cv.html" >CV</a></li>
-        <li><a href="personal.html" >Personal</a></li>
-        <li><a href="contact.html" >Contact</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+<div class="topbar">
+  <button class="menu-btn" id="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="sidebar">&#9776;</button>
+  <a class="topbar-name" href="index.html">Srishti Gupta</a>
+</div>
 
-<main id="main">
-  <div class="wrap">
+<nav class="sidebar" id="sidebar" aria-label="Primary">
+  <a class="sidebar-name" href="index.html">Srishti Gupta</a>
+  <a href="index.html" class="nav-item">Home</a><a href="research.html" class="nav-item">Research</a><a href="teaching.html" class="nav-item active" aria-current="page">Teaching</a><a href="cv.html" class="nav-item">CV</a><a href="personal.html" class="nav-item">Personal</a><a href="contact.html" class="nav-item">Contact</a>
+  <div class="sidebar-stripe" aria-hidden="true"><span style="background:#fb977a"></span><span style="background:#a33a8f"></span><span style="background:#f4b924"></span><span style="background:#c3336e"></span><span style="background:#e8613a"></span><span style="background:#38ada6"></span></div>
+</nav>
+<div class="overlay" id="overlay"></div>
 
-<section class="hero">
-  <p class="kicker">Teaching</p>
-  <h1 style="font-style:normal;">Teaching students how to think</h1>
-  <p class="lede">I want students to question a result, interrogate an assumption, and reason about a system rather than simply operate it, a skill I treat as inseparable from using AI responsibly.</p>
-</section>
+<main id="main" class="main">
+<div class="title-block">
+  <h1>Teaching</h1>
+  <hr class="title-bar">
+</div>
+<div class="content">
+<p>I want students to question a result, interrogate an assumption, and reason about a system rather than simply operate it, a skill I treat as inseparable from using AI responsibly.</p>
 
-<section>
-  <p>Education and teaching hold a special place in my heart. I have spent the last two years as a full-time, teaching-focused faculty member at the University at Albany's Massry School of Business, where I designed and taught four courses for the AI for Business program, spanning the undergraduate-to-graduate range, in person and online. I do not see teaching as separate from my research: explaining a concept to students with very different backgrounds forces a depth of understanding that writing a paper alone does not, and I approach it the way I approach my research, iteratively, and with the people I am designing for.</p>
+<p>Education and teaching hold a special place in my heart. I have spent the last two years as a full-time, teaching-focused faculty member at the University at Albany's Massry School of Business, where I designed and taught four courses for the AI for Business program, spanning the undergraduate-to-graduate range, in person and online. I do not see teaching as separate from my research: explaining a concept to students with very different backgrounds forces a depth of understanding that writing a paper alone does not, and I approach it the way I approach my research, iteratively, and with the people I am designing for.</p>
   <p>My teaching began in 2021, when I received the Graduate Teaching Fellowship from Penn State's College of Information Sciences and Technology, a competitive award given to two or three students a year, and independently designed and taught IST 331, Foundations of Human-Centered Design. That first semester was upended when student covid cases forced the course into hybrid mid-semester, and I learned to treat a syllabus as something I revise in response to my students, not something I set once and follow.</p>
 
   <h2>How I teach</h2>
@@ -72,27 +66,16 @@
     <div class="when">Undergraduate</div>
     <div><strong>IST 331: Foundations of Human-Centered Design</strong> &mdash; Design principles and human-computer interaction through a project-based approach (Penn State).</div>
   </div>
-</section>
-
-  </div>
+</div>
 </main>
 
-<footer class="site-footer">
-  <div class="wrap-wide">
-    <nav aria-label="Footer">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="research.html">Research</a></li>
-        <li><a href="teaching.html">Teaching</a></li>
-        <li><a href="cv.html">CV</a></li>
-        <li><a href="personal.html">Personal</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-    <p class="credit">Srishti Gupta, Ph.D. &middot; <a href="mailto:sgupta4@albany.edu">sgupta4@albany.edu</a></p>
-  </div>
-  <div class="stripe" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
-</footer>
-
+<script>
+(function(){
+  var b=document.getElementById('menu-btn'),s=document.getElementById('sidebar'),o=document.getElementById('overlay');
+  function set(open){s.classList.toggle('open',open);o.classList.toggle('show',open);b.setAttribute('aria-expanded',open?'true':'false');}
+  b.addEventListener('click',function(){set(!s.classList.contains('open'));});
+  o.addEventListener('click',function(){set(false);});
+})();
+</script>
 </body>
 </html>
